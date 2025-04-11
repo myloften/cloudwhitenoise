@@ -155,3 +155,92 @@ npm run start
 - [ ] 添加更多白噪音类型
 - [ ] 添加音频可视化效果
 - [ ] 优化移动端体验
+
+## 市场调研
+
+### 综合性混合白噪音
+
+#### A Soft Murmur
+- 特点：支持混合雨声、雷声、海浪声等自然音效
+- 功能：可自定义音量和组合模式
+- 链接：https://asoftmurmur.com
+
+#### Noisli
+- 特点：提供雨声、森林、咖啡厅等环境音效
+- 功能：支持颜色背景切换和便签功能
+- 链接：https://www.noisli.com
+
+#### Defonic
+- 特点：24种自然音效自由组合
+- 功能：界面轻拟物风格，支持浅色/暗黑模式切换
+- 链接：https://defonic.com
+
+### 雨声主题
+
+#### Rainy Mood
+- 特点：专注于逼真雨声模拟
+- 功能：每30分钟变换雨声形式（如暴雨、细雨）
+- 链接：https://www.rainymood.com
+
+#### Rainyscope
+- 特点：模拟四季雨声
+- 功能：搭配透过窗户的动态雨滴视觉效果
+- 链接：https://rainyscope.com
+
+#### Raining.FM
+- 特点：提供多种雨声场景
+- 功能：支持雷声、鸟鸣等细节调整
+- 链接：https://raining.fm
+
+### 海洋与自然音效
+
+#### Virtocean / Virtual Ocean
+- 特点：模拟海洋环境音效
+- 功能：可潜水听海底生物声音或控制海浪强度
+- 链接：http://virtocean.com
+
+#### Nature Sound Map
+- 特点：收录全球自然声音
+- 功能：通过地图选择不同地区的鸟鸣、水流等音效
+- 链接：https://www.naturesoundmap.com
+
+### 场景化白噪音
+
+#### 泡泡白噪音
+- 特点：提供工作、助眠、冥想模式
+- 功能：支持电子木鱼、番茄钟等功能
+- 链接：https://www.ppbzy.com
+
+#### 猫看白噪音
+- 特点：分类涵盖大自然、小动物、城市等场景
+- 功能：支持在线播放和下载
+- 链接：http://www.maokan.cc
+
+#### Sound Box
+- 特点：专业级白噪音调音台
+- 功能：预设晨间冥想、雨天咖啡等组合音效
+- 链接：https://soundbox.fun
+
+### 特色工具
+
+#### Purrli
+- 特点：模拟猫咪呼吸声
+- 功能：适合喜欢宠物陪伴的用户
+- 链接：https://purrli.com
+
+#### FreeMind
+- 特点：支持音效叠加（如雨声+蛙鸣+轻音乐）
+- 功能：可随机调整音量
+- 链接：https://www.freemindapp.com
+
+### 其他推荐
+
+#### Moodist
+- 特点：开源免费，内置75种白噪音
+- 功能：支持番茄时钟和快捷键
+- 链接：https://moodist.app
+
+#### 小睡眠（网站版）
+- 特点：提供白噪音、冥想音频
+- 功能：支持音效组合与睡眠监测
+- 链接：https://web.xiaoshuim.com
