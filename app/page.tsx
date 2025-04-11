@@ -9,6 +9,15 @@ export default function Home() {
   const [activeSounds, setActiveSounds] = useState<Record<string, boolean>>({});
   const [volumes, setVolumes] = useState<Record<string, number>>({});
 
+  useEffect(() => {
+    // 初始化音量
+    const initialVolumes = sounds.reduce((acc, sound) => {
+      acc[sound.id] = 0.5; // 默认音量 50%
+      return acc;
+    }, {} as Record<string, number>);
+    setVolumes(initialVolumes);
+  }, []);
+
   const toggleSound = (id: string) => {
     setActiveSounds(prev => ({
       ...prev,
@@ -24,7 +33,15 @@ export default function Home() {
   };
 
   const handleTimerSet = (minutes: number) => {
-    console.log(`Timer set for ${minutes} minutes`);
+    if (minutes === 0) {
+      // 立即停止所有声音
+      setActiveSounds({});
+    } else {
+      // 设置定时器在指定时间后停止所有声音
+      setTimeout(() => {
+        setActiveSounds({});
+      }, minutes * 60 * 1000);
+    }
   };
 
   return (
@@ -33,7 +50,7 @@ export default function Home() {
         <h1 className="text-5xl font-bold text-[var(--mint)] mb-4">
           Create immersive soundscapes
         </h1>
-        <p className="text-xl text-[#D1D5DB] mb-8">
+        <p className="text-xl text-black dark:text-white mb-8">
           Mix ambient sounds to boost your productivity
         </p>
         <div className="flex flex-wrap justify-center gap-2">

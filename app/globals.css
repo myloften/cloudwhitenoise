@@ -3,41 +3,28 @@
 @tailwind utilities;
 
 :root {
-  --mint: #7FCCAF;
-  --dark-bg: #1E2124;
-  --light-bg: #f5f5f5;
-  --city-red: #FF4B4B;
+  --mint: #7FBFB3;
+  --dark-bg: #1a1a1a;
+  --city-red: #8B1E1E;
+}
+
+/* Light mode colors */
+:root {
+  --bg-primary: #FFD180;  /* 暖色调背景色 */
+  --text-primary: #1a1a1a;
+}
+
+/* Dark mode colors */
+.dark {
+  --bg-primary: var(--dark-bg);
+  --text-primary: #ffffff;
 }
 
 body {
-  @apply bg-[var(--dark-bg)] text-[#FFFFFF] min-h-screen;
-  @apply transition-colors duration-300;
-  background-color: var(--dark-bg);
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   min-height: 100vh;
-  overflow-x: hidden;
-}
-
-body.light {
-  @apply bg-[var(--light-bg)] text-[var(--dark-bg)];
-  background-color: var(--light-bg);
-}
-
-body.dark {
-  @apply bg-[var(--dark-bg)] text-[#FFFFFF];
-  background-color: var(--dark-bg);
-}
-
-.cityscape {
-  @apply fixed bottom-0 left-0 right-0 z-0;
-  height: 300px;
-  background: linear-gradient(to bottom, transparent, var(--dark-bg) 90%),
-              linear-gradient(to bottom, rgba(0, 255, 208, 0.1), transparent);
-  opacity: 0.3;
-  pointer-events: none;
+  transition: background-color 0.3s ease;
 }
 
 .sound-grid {
@@ -68,51 +55,102 @@ body.dark {
 }
 
 .sound-name {
-  @apply mt-2 text-sm text-center text-[#D1D5DB];
+  @apply mt-2 text-sm text-center;
   position: absolute;
   bottom: 0.5rem;
   left: 0;
   right: 0;
   text-align: center;
-}
-
-.sound-icon:hover .sound-name {
-  @apply opacity-100;
+  color: var(--text-primary);
 }
 
 .volume-slider {
-  @apply w-full mt-2 appearance-none rounded-lg h-1;
-  display: none;
-  background-color: #374151;
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 0 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.sound-icon:hover .volume-slider {
-  display: block;
+.sound-icon:hover .volume-slider,
+.sound-icon.active .volume-slider {
+  opacity: 1;
 }
 
-.volume-slider::-webkit-slider-thumb {
-  @apply appearance-none w-3 h-3 rounded-full cursor-pointer;
-  background-color: var(--mint);
+/* Custom slider styles */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--mint);
+  outline: none;
 }
 
-.timer-container {
-  @apply fixed right-8 top-24 backdrop-blur-md rounded-xl p-6 shadow-lg;
-  background-color: rgba(31, 41, 55, 0.5);
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  border: 2px solid var(--mint);
 }
 
-.timer-button {
-  @apply px-4 py-2 rounded-lg flex items-center justify-center gap-2;
-  background-color: var(--mint);
-  color: #FFFFFF;
+input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  border: 2px solid var(--mint);
 }
 
-.timer-button:hover {
-  @apply transition-colors duration-300;
-  background-color: rgba(127, 204, 175, 0.8);
+.cityscape {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background-image: url('/images/cityscape.svg');
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: auto 100%;
+  z-index: 0;
 }
 
-.timer-button.stop {
-  @apply bg-red-500 hover:bg-red-600;
+/* 添加动画效果 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.5s ease-out;
 }
 
 .header-content {

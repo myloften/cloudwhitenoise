@@ -1,10 +1,7 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { icons } from '@/app/data/icons';
+import { useEffect, useRef } from 'react';
 import { Sound } from '@/app/data/sounds';
-import { IconType } from 'react-icons';
-import VolumeSlider from './VolumeSlider';
 
 export interface SoundIconProps {
   sound: Sound;
@@ -21,59 +18,58 @@ export default function SoundIcon({
   onVolumeChange,
   onClick,
 }: SoundIconProps) {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
+    if (!audioRef.current) {
+      audioRef.current = new Audio(sound.audioUrl);
+      audioRef.current.loop = true;
+    }
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+  }, [sound.audioUrl]);
 
-  const Icon = sound.icon;
-  const icon = icons[sound.id as keyof typeof icons];
-  if (!icon) return null;
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = volume;
+    }
+  }, [volume]);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.play().catch(error => {
+          console.error('Error playing audio:', error);
+        });
+      } else {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+    }
+  }, [isPlaying]);
 
   return (
-    <div
-      className={`
-        relative w-24 h-24 cursor-pointer transition-all duration-300
-        ${isPlaying ? 'scale-110' : 'scale-100'}
-        ${isHovered ? 'opacity-100' : 'opacity-80'}
-      `}
+    <div 
+      className={`sound-icon ${isPlaying ? 'active' : ''}`}
       onClick={onClick}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
-      <div
-        className={`
-          absolute inset-0 rounded-full transition-all duration-300
-          ${isPlaying ? 'bg-[#1aaba8]/20' : 'bg-transparent'}
-          ${isHovered ? 'scale-110' : 'scale-100'}
-        `}
-      />
-      <div
-        className={`
-          absolute inset-0 flex items-center justify-center
-          ${isMounted ? 'opacity-100' : 'opacity-0'}
-          transition-opacity duration-300
-        `}
-        dangerouslySetInnerHTML={{ __html: icon }}
-      />
-      {isPlaying && (
-        <div className="absolute inset-0 animate-ping rounded-full bg-[#1aaba8]/20" />
-      )}
-      <div className={`
-        absolute -bottom-6 left-1/2 transform -translate-x-1/2
-        text-sm text-gray-300 whitespace-nowrap
-        ${isHovered ? 'opacity-100' : 'opacity-0'}
-        transition-opacity duration-300
-      `}>
-        {sound.name}
+      <div dangerouslySetInnerHTML={{ __html: sound.icon }} />
+      <span className="sound-name">{sound.name}</span>
+      <div className="volume-slider">
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value={volume}
+          onChange={(e) => onVolumeChange(parseFloat(e.target.value))}
+          onClick={(e) => e.stopPropagation()}
+        />
       </div>
-      {isPlaying && (
-        <div className="volume-slider">
-          <VolumeSlider value={volume} onChange={onVolumeChange} />
-        </div>
-      )}
     </div>
   );
 } 
