@@ -1,36 +1,145 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StressLess - 减压放松网站
 
-## Getting Started
+StressLess 是一个面向欧美用户的减压放松网站，提供白噪音、压力测试和减压游戏等功能，帮助用户缓解压力、改善睡眠质量。
 
-First, run the development server:
+## 项目概述
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### 目标用户
+- 主要面向欧美用户
+- 有减压需求的群体
+- 学生、职场人士
+- 有睡眠问题的人群
+- 需要专注力提升的用户
+
+### 核心功能
+
+#### 第一期：白噪音播放器
+- 多种白噪音类型（雨声、海浪、森林等）
+- 音量调节功能
+- 定时关闭功能
+- 声音混音功能
+
+##### UI/UX 需求
+- 顶部导航栏
+  - 左侧：菜单选项按钮
+  - 中间：网站介绍、图片和情景关键词
+  - 右侧：白天/夜晚模式切换按钮
+- 主要内容区
+  - 白噪音图标网格布局（每行3个）
+  - 适配移动端，两侧留有间距
+  - 图标居中显示
+  - 鼠标悬浮显示白噪音类型名称
+  - 点击图标显示音量控制滑块
+  - 再次点击关闭音量控制并停止播放
+- 右侧定时功能
+  - 固定在页面右侧
+  - 点击显示定时选项（1小时/30分钟/立即静音）
+  - 简洁的定时器UI设计
+
+#### 第二期：压力测试
+- 科学的压力评估问卷
+- 个性化建议
+- 进度追踪
+- 结果分析报告
+
+#### 第三期：减压游戏
+- 简单有趣的互动游戏
+- 进度保存
+- 成就系统
+- 分享功能
+
+## SEO 优化策略
+
+### 主要关键词
+- white noise
+- relaxation sounds
+- stress relief
+- calming sounds
+- meditation sounds
+
+### 长尾关键词
+- free white noise for sleep
+- calming sounds for anxiety
+- relaxation sounds for work
+- stress relief sounds
+- meditation music for focus
+
+### 内容策略
+- 每个声音类型都有详细描述
+- 使用相关关键词自然融入文本
+- 提供使用建议和好处
+- 添加用户评价和反馈
+
+## 技术栈
+
+- Next.js 15.3.0
+- React
+- TypeScript
+- TailwindCSS
+- Howler.js (音频处理)
+
+## 项目结构
+
+```
+stressless/
+├── app/
+│   ├── components/
+│   │   ├── SoundButton.tsx    # 音频控制按钮组件
+│   │   └── ...
+│   ├── data/
+│   │   └── sounds.ts         # 音频数据配置
+│   ├── globals.css           # 全局样式
+│   ├── layout.tsx            # 根布局组件
+│   └── page.tsx             # 主页面组件
+├── public/
+│   └── favicon.ico          # 网站图标
+└── package.json            # 项目依赖
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 本地开发
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# 安装依赖
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# 启动开发服务器
+npm run dev
 
-## Learn More
+# 构建生产版本
+npm run build
 
-To learn more about Next.js, take a look at the following resources:
+# 启动生产服务器
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 部署
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+项目使用 Vercel 进行部署，每次推送到 main 分支会自动触发部署。
 
-## Deploy on Vercel
+## 贡献指南
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Fork 项目
+2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 开启 Pull Request
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 许可证
+
+[MIT License](LICENSE)
+
+## 更新记录
+
+### 2024-03-21
+- [x] 完成项目初始化
+- [x] 基础架构搭建
+- [x] 音频数据配置
+- [x] 在线音频资源整合
+- [x] 基础UI组件开发
+
+### 待完成
+- [ ] 音频播放功能实现
+- [ ] 音量控制
+- [ ] 混音功能
+- [ ] 定时功能
+- [ ] UI美化和动画效果
