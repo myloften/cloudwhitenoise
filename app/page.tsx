@@ -5,6 +5,38 @@ import { sounds, soundCategories } from './data/sounds';
 import SoundIcon from './components/SoundIcon';
 import Timer from './components/Timer';
 
+// 预设场景配置
+const scenePresets = {
+  meditation: {
+    sounds: ['stream', 'birds', 'bell'],
+    volumes: { stream: 0.3, birds: 0.2, bell: 0.4 }
+  },
+  productivity: {
+    sounds: ['cafe', 'rain', 'typing'],
+    volumes: { cafe: 0.3, rain: 0.2, typing: 0.2 }
+  },
+  relax: {
+    sounds: ['ocean', 'wind', 'birds'],
+    volumes: { ocean: 0.4, wind: 0.2, birds: 0.2 }
+  },
+  sleep: {
+    sounds: ['rain', 'night', 'whitenoise'],
+    volumes: { rain: 0.3, night: 0.2, whitenoise: 0.1 }
+  },
+  zen: {
+    sounds: ['stream', 'woodfish', 'bell'],
+    volumes: { stream: 0.3, woodfish: 0.2, bell: 0.2 }
+  },
+  refreshing: {
+    sounds: ['forest', 'birds', 'stream'],
+    volumes: { forest: 0.3, birds: 0.2, stream: 0.2 }
+  },
+  focus: {
+    sounds: ['whitenoise', 'rain', 'cafe'],
+    volumes: { whitenoise: 0.2, rain: 0.2, cafe: 0.2 }
+  }
+};
+
 export default function Home() {
   const [activeSounds, setActiveSounds] = useState<Record<string, boolean>>({});
   const [volumes, setVolumes] = useState<Record<string, number>>({});
@@ -44,6 +76,30 @@ export default function Home() {
     }
   };
 
+  const applyPreset = (preset: string) => {
+    const scene = scenePresets[preset as keyof typeof scenePresets];
+    if (!scene) return;
+
+    // 停止所有当前播放的声音
+    setActiveSounds({});
+
+    // 设置新的音量
+    setVolumes(prev => ({
+      ...prev,
+      ...scene.volumes
+    }));
+
+    // 延迟一小段时间后开始播放新的组合
+    setTimeout(() => {
+      const newActiveSounds = scene.sounds.reduce((acc, soundId) => {
+        acc[soundId] = true;
+        return acc;
+      }, {} as Record<string, boolean>);
+      
+      setActiveSounds(newActiveSounds);
+    }, 100);
+  };
+
   return (
     <main className="flex min-h-screen flex-col items-center p-8">
       <div className="text-center mb-12">
@@ -54,10 +110,14 @@ export default function Home() {
           Mix ambient sounds to boost your productivity
         </p>
         <div className="flex flex-wrap justify-center gap-2">
-          {['meditation', 'productivity', 'relax', 'sleep', 'zen', 'refreshing', 'focus'].map((tag) => (
-            <span key={tag} className="px-3 py-1 bg-[rgba(255,255,255,0.1)] rounded-full text-sm">
-              #{tag}
-            </span>
+          {Object.keys(scenePresets).map((tag) => (
+            <button
+              key={tag}
+              onClick={() => applyPreset(tag)}
+              className="px-4 py-2 bg-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.15)] rounded-full text-sm transition-all duration-300 flex items-center gap-2 group"
+            >
+              <span className="opacity-60 group-hover:opacity-100">#{tag}</span>
+            </button>
           ))}
         </div>
       </div>
