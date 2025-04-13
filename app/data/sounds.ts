@@ -23,7 +23,7 @@ export const sounds: Sound[] = [
     name: 'Ocean Waves',
     category: 'nature',
     icon: icons.ocean,
-    audioUrl: '/sounds/nature/ocean.mp3',
+    audioUrl: 'http://43.153.4.27/nature/ocean.mp3',
     description: 'Calming ocean waves for relaxation and focus'
   },
   {
@@ -31,7 +31,7 @@ export const sounds: Sound[] = [
     name: 'Rain',
     category: 'weather',
     icon: icons.rain,
-    audioUrl: '/sounds/weather/rain.mp3',
+    audioUrl: 'http://43.153.4.27/weather/rain.mp3',
     description: 'Gentle rainfall sounds for peaceful sleep'
   },
   {
@@ -39,7 +39,7 @@ export const sounds: Sound[] = [
     name: 'Forest',
     category: 'nature',
     icon: icons.forest,
-    audioUrl: '/sounds/nature/forest.mp3',
+    audioUrl: 'http://43.153.4.27/nature/forest.mp3',
     description: 'Serene forest ambience with bird songs'
   },
   {
@@ -47,7 +47,7 @@ export const sounds: Sound[] = [
     name: 'Fireplace',
     category: 'ambient',
     icon: icons.fire,
-    audioUrl: '/sounds/ambient/fire.mp3',
+    audioUrl: 'http://43.153.4.27/ambient/fire.mp3',
     description: 'Cozy fireplace crackling sounds'
   },
   {
@@ -55,7 +55,7 @@ export const sounds: Sound[] = [
     name: 'Wind',
     category: 'weather',
     icon: icons.wind,
-    audioUrl: '/sounds/weather/wind.mp3',
+    audioUrl: 'http://43.153.4.27/weather/wind.mp3',
     description: 'Gentle wind sounds for meditation'
   },
   {
@@ -63,7 +63,7 @@ export const sounds: Sound[] = [
     name: 'Birds',
     category: 'nature',
     icon: icons.birds,
-    audioUrl: '/sounds/nature/birds.mp3',
+    audioUrl: 'http://43.153.4.27/nature/birds.mp3',
     description: 'Peaceful bird songs'
   },
   {
@@ -71,7 +71,7 @@ export const sounds: Sound[] = [
     name: 'Cafe',
     category: 'urban',
     icon: icons.cafe,
-    audioUrl: '/sounds/urban/cafe.mp3',
+    audioUrl: 'http://43.153.4.27/urban/cafe.mp3',
     description: 'Cozy cafe atmosphere'
   },
   {
@@ -79,7 +79,7 @@ export const sounds: Sound[] = [
     name: 'Fan',
     category: 'urban',
     icon: icons.fan,
-    audioUrl: '/sounds/urban/fan.mp3',
+    audioUrl: 'http://43.153.4.27/urban/fan.mp3',
     description: 'White noise from a fan'
   },
   {
@@ -87,7 +87,7 @@ export const sounds: Sound[] = [
     name: 'Train',
     category: 'urban',
     icon: icons.train,
-    audioUrl: '/sounds/urban/train.mp3',
+    audioUrl: 'http://43.153.4.27/urban/train.mp3',
     description: 'Rhythmic train sounds'
   },
   {
@@ -95,7 +95,7 @@ export const sounds: Sound[] = [
     name: 'Stream',
     category: 'nature',
     icon: icons.stream,
-    audioUrl: '/sounds/nature/stream.mp3',
+    audioUrl: 'http://43.153.4.27/nature/stream.mp3',
     description: 'Peaceful stream and river sounds'
   },
   {
@@ -103,7 +103,7 @@ export const sounds: Sound[] = [
     name: 'Thunder',
     category: 'weather',
     icon: icons.thunder,
-    audioUrl: '/sounds/weather/thunder.mp3',
+    audioUrl: 'http://43.153.4.27/weather/thunder.mp3',
     description: 'Rolling thunder sounds'
   },
   {
@@ -111,7 +111,7 @@ export const sounds: Sound[] = [
     name: 'Crickets',
     category: 'nature',
     icon: icons.cricket,
-    audioUrl: '/sounds/nature/cricket.mp3',
+    audioUrl: 'http://43.153.4.27/nature/cricket.mp3',
     description: 'Peaceful cricket chirping'
   },
   {
@@ -119,7 +119,7 @@ export const sounds: Sound[] = [
     name: 'Waterfall',
     category: 'nature',
     icon: icons.waterfall,
-    audioUrl: '/sounds/nature/waterfall.mp3',
+    audioUrl: 'http://43.153.4.27/nature/waterfall.mp3',
     description: 'Powerful waterfall white noise'
   },
   {
@@ -127,7 +127,7 @@ export const sounds: Sound[] = [
     name: 'Library',
     category: 'urban',
     icon: icons.library,
-    audioUrl: '/sounds/urban/library.mp3',
+    audioUrl: 'http://43.153.4.27/urban/library.mp3',
     description: 'Quiet library ambience'
   },
   {
@@ -135,7 +135,7 @@ export const sounds: Sound[] = [
     name: 'Typing',
     category: 'urban',
     icon: icons.typing,
-    audioUrl: '/sounds/urban/typing.mp3',
+    audioUrl: 'http://43.153.4.27/urban/typing.mp3',
     description: 'Rhythmic keyboard typing sounds'
   },
   {
@@ -143,7 +143,7 @@ export const sounds: Sound[] = [
     name: 'White Noise',
     category: 'ambient',
     icon: icons.whitenoise,
-    audioUrl: '/sounds/ambient/whitenoise.mp3',
+    audioUrl: 'http://43.153.4.27/ambient/whitenoise.mp3',
     description: 'Pure white noise for focus'
   },
   {
@@ -151,7 +151,7 @@ export const sounds: Sound[] = [
     name: 'Meditation Bell',
     category: 'meditation',
     icon: icons.bell,
-    audioUrl: '/sounds/meditation/bell.mp3',
+    audioUrl: 'http://43.153.4.27/meditation/bell.mp3',
     description: 'Meditation bell sounds'
   },
   {
@@ -159,7 +159,7 @@ export const sounds: Sound[] = [
     name: 'Night',
     category: 'nature',
     icon: icons.night,
-    audioUrl: '/sounds/nature/night.mp3',
+    audioUrl: 'http://43.153.4.27/nature/night.mp3',
     description: 'Peaceful night ambience'
   }
 ]; 

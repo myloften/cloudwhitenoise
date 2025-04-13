@@ -13,56 +13,48 @@ const PRIORITY_SOUND_IDS = [
   // sleep场景
   'night', 'whitenoise',
   // focus场景
-  // nature场景
-  'forest',
-  // peace场景
+  'forest'
 ];
 
-// 其他音效（后续加载）
+// 其他音效（按需加载）
 const SECONDARY_SOUND_IDS = [
   'fire', 'fan', 'train', 'library',
   'thunder', 'cricket', 'waterfall'
 ];
 
+// 音频缓存时间（24小时）
+const CACHE_DURATION = 24 * 60 * 60 * 1000;
+
 export function useAudioPreload() {
   const preloadedSounds = useRef<Map<string, Howl>>(new Map());
 
   useEffect(() => {
-    // 先加载优先级高的音效
-    const loadPrioritySounds = async () => {
-      for (const id of PRIORITY_SOUND_IDS) {
-        const sound = sounds.find(s => s.id === id);
-        if (sound && !preloadedSounds.current.has(id)) {
-          const howl = new Howl({
-            src: [sound.audioUrl],
-            preload: true,
-            html5: true,
-            format: ['mp3']
-          });
-          preloadedSounds.current.set(id, howl);
-          // 等待当前音效加载完成
-          await new Promise(resolve => {
-            howl.once('load', resolve);
-          });
-        }
+    // 创建并预加载音效
+    const loadSound = (id: string) => {
+      const sound = sounds.find(s => s.id === id);
+      if (sound && !preloadedSounds.current.has(id)) {
+        const howl = new Howl({
+          src: [sound.audioUrl],
+          preload: true,
+          html5: true,
+          format: ['mp3'],
+          onload: () => {
+            console.log(`Loaded: ${sound.name}`);
+          },
+          onloaderror: (_, error) => {
+            console.error(`Error loading ${sound.name}:`, error);
+          }
+        });
+        preloadedSounds.current.set(id, howl);
       }
-
-      // 优先音效加载完成后，开始加载次要音效
-      SECONDARY_SOUND_IDS.forEach(id => {
-        const sound = sounds.find(s => s.id === id);
-        if (sound && !preloadedSounds.current.has(id)) {
-          const howl = new Howl({
-            src: [sound.audioUrl],
-            preload: true,
-            html5: true,
-            format: ['mp3']
-          });
-          preloadedSounds.current.set(id, howl);
-        }
-      });
     };
 
-    loadPrioritySounds();
+    // 按优先级加载音效
+    PRIORITY_SOUND_IDS.forEach((id, index) => {
+      setTimeout(() => {
+        loadSound(id);
+      }, index * 300); // 每300ms加载一个音效
+    });
 
     // 清理函数
     return () => {
