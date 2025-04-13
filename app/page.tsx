@@ -107,7 +107,7 @@ export default function Home() {
           Cloud White Noise
         </h1>
         <p className="text-xl text-black dark:text-white mb-8">
-          Relax with soothing ambient sounds
+          Find your perfect ambient soundscape
         </p>
         <div className="flex flex-wrap justify-center gap-2">
           {Object.keys(scenePresets).map((tag) => (
@@ -125,7 +125,7 @@ export default function Home() {
       <div className="w-full max-w-6xl">
         {soundCategories.map((category) => (
           <div key={category} className="mb-12">
-            <h2 className="text-2xl font-medium text-[var(--mint)] mb-6">{category}</h2>
+            <h2 className="text-2xl font-medium text-[var(--mint)] mb-6 capitalize">{category}</h2>
             <div className="sound-grid">
               {sounds
                 .filter((sound) => sound.category === category)

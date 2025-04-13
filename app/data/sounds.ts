@@ -20,7 +20,7 @@ export const soundCategories = [
 export const sounds: Sound[] = [
   {
     id: 'ocean',
-    name: '海浪',
+    name: 'Ocean Waves',
     category: 'nature',
     icon: icons.ocean,
     audioUrl: '/sounds/nature/ocean.mp3',
@@ -28,7 +28,7 @@ export const sounds: Sound[] = [
   },
   {
     id: 'rain',
-    name: '雨声',
+    name: 'Rain',
     category: 'weather',
     icon: icons.rain,
     audioUrl: '/sounds/weather/rain.mp3',
@@ -36,7 +36,7 @@ export const sounds: Sound[] = [
   },
   {
     id: 'forest',
-    name: '森林',
+    name: 'Forest',
     category: 'nature',
     icon: icons.forest,
     audioUrl: '/sounds/nature/forest.mp3',
@@ -44,7 +44,7 @@ export const sounds: Sound[] = [
   },
   {
     id: 'fire',
-    name: '壁炉',
+    name: 'Fireplace',
     category: 'ambient',
     icon: icons.fire,
     audioUrl: '/sounds/ambient/fire.mp3',
@@ -52,7 +52,7 @@ export const sounds: Sound[] = [
   },
   {
     id: 'wind',
-    name: '风声',
+    name: 'Wind',
     category: 'weather',
     icon: icons.wind,
     audioUrl: '/sounds/weather/wind.mp3',
@@ -60,7 +60,7 @@ export const sounds: Sound[] = [
   },
   {
     id: 'birds',
-    name: '鸟鸣',
+    name: 'Birds',
     category: 'nature',
     icon: icons.birds,
     audioUrl: '/sounds/nature/birds.mp3',
@@ -68,7 +68,7 @@ export const sounds: Sound[] = [
   },
   {
     id: 'cafe',
-    name: '咖啡厅',
+    name: 'Cafe',
     category: 'urban',
     icon: icons.cafe,
     audioUrl: '/sounds/urban/cafe.mp3',
@@ -76,7 +76,7 @@ export const sounds: Sound[] = [
   },
   {
     id: 'fan',
-    name: '电扇',
+    name: 'Fan',
     category: 'urban',
     icon: icons.fan,
     audioUrl: '/sounds/urban/fan.mp3',
@@ -84,7 +84,7 @@ export const sounds: Sound[] = [
   },
   {
     id: 'train',
-    name: '火车',
+    name: 'Train',
     category: 'urban',
     icon: icons.train,
     audioUrl: '/sounds/urban/train.mp3',
@@ -92,7 +92,7 @@ export const sounds: Sound[] = [
   },
   {
     id: 'stream',
-    name: '溪流',
+    name: 'Stream',
     category: 'nature',
     icon: icons.stream,
     audioUrl: '/sounds/nature/stream.mp3',
@@ -100,7 +100,7 @@ export const sounds: Sound[] = [
   },
   {
     id: 'thunder',
-    name: '雷声',
+    name: 'Thunder',
     category: 'weather',
     icon: icons.thunder,
     audioUrl: '/sounds/weather/thunder.mp3',
@@ -108,7 +108,7 @@ export const sounds: Sound[] = [
   },
   {
     id: 'cricket',
-    name: '蟋蟀',
+    name: 'Crickets',
     category: 'nature',
     icon: icons.cricket,
     audioUrl: '/sounds/nature/cricket.mp3',
@@ -116,7 +116,7 @@ export const sounds: Sound[] = [
   },
   {
     id: 'waterfall',
-    name: '瀑布',
+    name: 'Waterfall',
     category: 'nature',
     icon: icons.waterfall,
     audioUrl: '/sounds/nature/waterfall.mp3',
@@ -124,7 +124,7 @@ export const sounds: Sound[] = [
   },
   {
     id: 'library',
-    name: '图书馆',
+    name: 'Library',
     category: 'urban',
     icon: icons.library,
     audioUrl: '/sounds/urban/library.mp3',
@@ -132,7 +132,7 @@ export const sounds: Sound[] = [
   },
   {
     id: 'typing',
-    name: '打字',
+    name: 'Typing',
     category: 'urban',
     icon: icons.typing,
     audioUrl: '/sounds/urban/typing.mp3',
@@ -140,7 +140,7 @@ export const sounds: Sound[] = [
   },
   {
     id: 'whitenoise',
-    name: '白噪音',
+    name: 'White Noise',
     category: 'ambient',
     icon: icons.whitenoise,
     audioUrl: '/sounds/ambient/whitenoise.mp3',
@@ -148,7 +148,7 @@ export const sounds: Sound[] = [
   },
   {
     id: 'bell',
-    name: '铃声',
+    name: 'Meditation Bell',
     category: 'meditation',
     icon: icons.bell,
     audioUrl: '/sounds/meditation/bell.mp3',
@@ -156,7 +156,7 @@ export const sounds: Sound[] = [
   },
   {
     id: 'night',
-    name: '夜晚',
+    name: 'Night',
     category: 'nature',
     icon: icons.night,
     audioUrl: '/sounds/nature/night.mp3',

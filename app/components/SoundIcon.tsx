@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { Howl } from 'howler';
 import { Sound } from '@/app/data/sounds';
+import { useAudioPreload } from '@/app/hooks/useAudioPreload';
 
 export interface SoundIconProps {
   sound: Sound;
@@ -19,10 +20,16 @@ export default function SoundIcon({
   onVolumeChange,
   onClick,
 }: SoundIconProps) {
+  const { getPreloadedSound } = useAudioPreload();
   const soundRef = useRef<Howl | null>(null);
 
   useEffect(() => {
-    if (!soundRef.current) {
+    // 使用预加载的音频实例
+    const preloadedSound = getPreloadedSound(sound.id);
+    if (preloadedSound) {
+      soundRef.current = preloadedSound;
+    } else {
+      // 如果没有预加载，创建新的实例
       soundRef.current = new Howl({
         src: [sound.audioUrl],
         loop: true,
@@ -32,13 +39,14 @@ export default function SoundIcon({
         format: ['mp3']
       });
     }
+
     return () => {
-      if (soundRef.current) {
+      if (soundRef.current && !preloadedSound) {
         soundRef.current.unload();
         soundRef.current = null;
       }
     };
-  }, [sound.audioUrl]);
+  }, [sound.audioUrl, getPreloadedSound]);
 
   useEffect(() => {
     if (soundRef.current) {
@@ -63,17 +71,19 @@ export default function SoundIcon({
     >
       <div dangerouslySetInnerHTML={{ __html: sound.icon }} />
       <span className="sound-name">{sound.name}</span>
-      <div className="volume-slider">
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          value={volume}
-          onChange={(e) => onVolumeChange(parseFloat(e.target.value))}
-          onClick={(e) => e.stopPropagation()}
-        />
-      </div>
+      {isPlaying && (
+        <div className="volume-slider">
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value={volume}
+            onChange={(e) => onVolumeChange(parseFloat(e.target.value))}
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 } 
