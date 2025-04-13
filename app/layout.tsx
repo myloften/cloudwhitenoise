@@ -21,7 +21,7 @@ export default function RootLayout({
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center">
                 <a href="/" className="text-2xl font-bold text-[var(--mint)]">
-                  StressLess
+                  Cloud White Noise
                 </a>
               </div>
 

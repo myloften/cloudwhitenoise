@@ -117,6 +117,67 @@ npm run start
 
 项目使用 Vercel 进行部署，每次推送到 main 分支会自动触发部署。
 
+### Vercel 部署配置
+- 免费方案限制：
+  - 每个项目 100GB 带宽/月
+  - 每个文件最大 50MB
+  - 无限项目数量
+  - 自动 HTTPS 和 CDN
+  - 支持自定义域名
+
+### 音频文件结构
+```
+public/
+  sounds/
+    nature/
+      rain.mp3
+      thunder.mp3
+      waves.mp3
+      birds.mp3
+    city/
+      cafe.mp3
+      train.mp3
+      keyboard.mp3
+    meditation/
+      om.mp3
+      bowls.mp3
+    white-noise/
+      white-noise.mp3
+```
+
+### 音频文件来源
+建议从以下网站下载免费音频：
+1. Pixabay (https://pixabay.com/music/)
+   - 完全免费
+   - 无需署名
+   - 可商用
+   - 推荐下载 128kbps MP3 格式
+
+2. Freesound (https://freesound.org/)
+   - 免费音频库
+   - 需要注册
+   - 注意查看许可证
+
+3. Free Music Archive (https://freemusicarchive.org/)
+   - 免费音乐库
+   - 需要查看具体许可证
+
+### 音频文件优化
+1. 使用 ffmpeg 压缩音频：
+```bash
+ffmpeg -i input.mp3 -b:a 128k output.mp3
+```
+
+2. 使用在线工具压缩：
+- https://www.media.io/audio-compressor.html
+- https://www.youcompress.com/
+
+### 音频文件命名规范
+- 使用小写字母
+- 使用连字符（-）代替空格
+- 保持文件名简短
+- 使用有意义的名称
+
 ## 贡献指南
 
 1. Fork 项目
@@ -160,6 +221,8 @@ npm run start
 - [x] 实现一键切换音效组合
 - [x] 优化音效切换过渡效果
 - [x] 完善标签交互体验
+- [x] 更新网站名称为 Cloud White Noise
+- [x] 优化图标显示效果
 
 ### MVP 待完成功能
 - [ ] 添加音频预加载机制

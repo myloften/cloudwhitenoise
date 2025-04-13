@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from 'react';
+import { Howl } from 'howler';
 import { Sound } from '@/app/data/sounds';
 
 export interface SoundIconProps {
@@ -18,36 +19,39 @@ export default function SoundIcon({
   onVolumeChange,
   onClick,
 }: SoundIconProps) {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const soundRef = useRef<Howl | null>(null);
 
   useEffect(() => {
-    if (!audioRef.current) {
-      audioRef.current = new Audio(sound.audioUrl);
-      audioRef.current.loop = true;
+    if (!soundRef.current) {
+      soundRef.current = new Howl({
+        src: [sound.audioUrl],
+        loop: true,
+        volume: volume,
+        html5: true,
+        preload: true,
+        format: ['mp3']
+      });
     }
     return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
+      if (soundRef.current) {
+        soundRef.current.unload();
+        soundRef.current = null;
       }
     };
   }, [sound.audioUrl]);
 
   useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = volume;
+    if (soundRef.current) {
+      soundRef.current.volume(volume);
     }
   }, [volume]);
 
   useEffect(() => {
-    if (audioRef.current) {
+    if (soundRef.current) {
       if (isPlaying) {
-        audioRef.current.play().catch(error => {
-          console.error('Error playing audio:', error);
-        });
+        soundRef.current.play();
       } else {
-        audioRef.current.pause();
-        audioRef.current.currentTime = 0;
+        soundRef.current.stop();
       }
     }
   }, [isPlaying]);

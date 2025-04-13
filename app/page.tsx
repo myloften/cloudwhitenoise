@@ -23,17 +23,17 @@ const scenePresets = {
     sounds: ['rain', 'night', 'whitenoise'],
     volumes: { rain: 0.3, night: 0.2, whitenoise: 0.1 }
   },
-  zen: {
-    sounds: ['stream', 'woodfish', 'bell'],
-    volumes: { stream: 0.3, woodfish: 0.2, bell: 0.2 }
-  },
-  refreshing: {
-    sounds: ['forest', 'birds', 'stream'],
-    volumes: { forest: 0.3, birds: 0.2, stream: 0.2 }
-  },
   focus: {
     sounds: ['whitenoise', 'rain', 'cafe'],
     volumes: { whitenoise: 0.2, rain: 0.2, cafe: 0.2 }
+  },
+  nature: {
+    sounds: ['forest', 'birds', 'stream'],
+    volumes: { forest: 0.3, birds: 0.2, stream: 0.2 }
+  },
+  peace: {
+    sounds: ['bell', 'rain', 'night'],
+    volumes: { bell: 0.3, rain: 0.2, night: 0.2 }
   }
 };
 
@@ -104,10 +104,10 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center p-8">
       <div className="text-center mb-12">
         <h1 className="text-5xl font-bold text-[var(--mint)] mb-4">
-          Create immersive soundscapes
+          Cloud White Noise
         </h1>
         <p className="text-xl text-black dark:text-white mb-8">
-          Mix ambient sounds to boost your productivity
+          Relax with soothing ambient sounds
         </p>
         <div className="flex flex-wrap justify-center gap-2">
           {Object.keys(scenePresets).map((tag) => (

@@ -23,7 +23,7 @@ export const sounds: Sound[] = [
     name: '海浪',
     category: 'nature',
     icon: icons.ocean,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2570/2570-preview.mp3',
+    audioUrl: '/sounds/nature/ocean.mp3',
     description: 'Calming ocean waves for relaxation and focus'
   },
   {
@@ -31,7 +31,7 @@ export const sounds: Sound[] = [
     name: '雨声',
     category: 'weather',
     icon: icons.rain,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3',
+    audioUrl: '/sounds/weather/rain.mp3',
     description: 'Gentle rainfall sounds for peaceful sleep'
   },
   {
@@ -39,7 +39,7 @@ export const sounds: Sound[] = [
     name: '森林',
     category: 'nature',
     icon: icons.forest,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2572/2572-preview.mp3',
+    audioUrl: '/sounds/nature/forest.mp3',
     description: 'Serene forest ambience with bird songs'
   },
   {
@@ -47,7 +47,7 @@ export const sounds: Sound[] = [
     name: '壁炉',
     category: 'ambient',
     icon: icons.fire,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2573/2573-preview.mp3',
+    audioUrl: '/sounds/ambient/fire.mp3',
     description: 'Cozy fireplace crackling sounds'
   },
   {
@@ -55,7 +55,7 @@ export const sounds: Sound[] = [
     name: '风声',
     category: 'weather',
     icon: icons.wind,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2574/2574-preview.mp3',
+    audioUrl: '/sounds/weather/wind.mp3',
     description: 'Gentle wind sounds for meditation'
   },
   {
@@ -63,7 +63,7 @@ export const sounds: Sound[] = [
     name: '鸟鸣',
     category: 'nature',
     icon: icons.birds,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2575/2575-preview.mp3',
+    audioUrl: '/sounds/nature/birds.mp3',
     description: 'Peaceful bird songs'
   },
   {
@@ -71,7 +71,7 @@ export const sounds: Sound[] = [
     name: '咖啡厅',
     category: 'urban',
     icon: icons.cafe,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2576/2576-preview.mp3',
+    audioUrl: '/sounds/urban/cafe.mp3',
     description: 'Cozy cafe atmosphere'
   },
   {
@@ -79,7 +79,7 @@ export const sounds: Sound[] = [
     name: '电扇',
     category: 'urban',
     icon: icons.fan,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2577/2577-preview.mp3',
+    audioUrl: '/sounds/urban/fan.mp3',
     description: 'White noise from a fan'
   },
   {
@@ -87,7 +87,7 @@ export const sounds: Sound[] = [
     name: '火车',
     category: 'urban',
     icon: icons.train,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2578/2578-preview.mp3',
+    audioUrl: '/sounds/urban/train.mp3',
     description: 'Rhythmic train sounds'
   },
   {
@@ -95,7 +95,7 @@ export const sounds: Sound[] = [
     name: '溪流',
     category: 'nature',
     icon: icons.stream,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2579/2579-preview.mp3',
+    audioUrl: '/sounds/nature/stream.mp3',
     description: 'Peaceful stream and river sounds'
   },
   {
@@ -103,7 +103,7 @@ export const sounds: Sound[] = [
     name: '雷声',
     category: 'weather',
     icon: icons.thunder,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2580/2580-preview.mp3',
+    audioUrl: '/sounds/weather/thunder.mp3',
     description: 'Rolling thunder sounds'
   },
   {
@@ -111,7 +111,7 @@ export const sounds: Sound[] = [
     name: '蟋蟀',
     category: 'nature',
     icon: icons.cricket,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2581/2581-preview.mp3',
+    audioUrl: '/sounds/nature/cricket.mp3',
     description: 'Peaceful cricket chirping'
   },
   {
@@ -119,7 +119,7 @@ export const sounds: Sound[] = [
     name: '瀑布',
     category: 'nature',
     icon: icons.waterfall,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2582/2582-preview.mp3',
+    audioUrl: '/sounds/nature/waterfall.mp3',
     description: 'Powerful waterfall white noise'
   },
   {
@@ -127,7 +127,7 @@ export const sounds: Sound[] = [
     name: '图书馆',
     category: 'urban',
     icon: icons.library,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2583/2583-preview.mp3',
+    audioUrl: '/sounds/urban/library.mp3',
     description: 'Quiet library ambience'
   },
   {
@@ -135,7 +135,7 @@ export const sounds: Sound[] = [
     name: '打字',
     category: 'urban',
     icon: icons.typing,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2584/2584-preview.mp3',
+    audioUrl: '/sounds/urban/typing.mp3',
     description: 'Rhythmic keyboard typing sounds'
   },
   {
@@ -143,7 +143,7 @@ export const sounds: Sound[] = [
     name: '白噪音',
     category: 'ambient',
     icon: icons.whitenoise,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2585/2585-preview.mp3',
+    audioUrl: '/sounds/ambient/whitenoise.mp3',
     description: 'Pure white noise for focus'
   },
   {
@@ -151,23 +151,15 @@ export const sounds: Sound[] = [
     name: '铃声',
     category: 'meditation',
     icon: icons.bell,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2586/2586-preview.mp3',
+    audioUrl: '/sounds/meditation/bell.mp3',
     description: 'Meditation bell sounds'
-  },
-  {
-    id: 'woodfish',
-    name: '木鱼',
-    category: 'meditation',
-    icon: icons.woodfish,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2587/2587-preview.mp3',
-    description: 'Traditional wooden fish percussion'
   },
   {
     id: 'night',
     name: '夜晚',
     category: 'nature',
     icon: icons.night,
-    audioUrl: 'https://assets.mixkit.co/active_storage/sfx/2588/2588-preview.mp3',
+    audioUrl: '/sounds/nature/night.mp3',
     description: 'Peaceful night ambience'
   }
 ]; 

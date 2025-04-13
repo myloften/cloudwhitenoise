@@ -46,10 +46,10 @@ export default function Header({
         {/* Center: Logo and Description */}
         <div className="flex flex-col items-center">
           <div className="flex items-center gap-2">
-            <img src="/images/logo.svg" alt="StressLess" className="h-8 w-8" />
-            <h1 className="text-xl font-semibold text-mint">StressLess</h1>
+            <img src="/images/logo.svg" alt="Cloud White Noise" className="h-8 w-8" />
+            <h1 className="text-xl font-semibold text-mint">Cloud White Noise</h1>
           </div>
-          <p className="text-xs text-white/60">Find your peace in ambient sounds</p>
+          <p className="text-xs text-white/60">Relax with soothing ambient sounds</p>
         </div>
 
         {/* Right: Theme Toggle */}
