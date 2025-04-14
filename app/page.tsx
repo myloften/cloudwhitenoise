@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { sounds, soundCategories } from './data/sounds';
 import SoundIcon from './components/SoundIcon';
 import Timer from './components/Timer';
+import { trackAudioEvent, trackPresetEvent, trackTimerEvent } from './utils/analytics';
 
 // 预设场景配置
 const scenePresets = {
@@ -51,25 +52,25 @@ export default function Home() {
   }, []);
 
   const toggleSound = (id: string) => {
-    setActiveSounds(prev => ({
-      ...prev,
-      [id]: !prev[id]
-    }));
+    setActiveSounds(prev => {
+      const newState = { ...prev, [id]: !prev[id] };
+      trackAudioEvent(id, newState[id] ? 'play' : 'stop');
+      return newState;
+    });
   };
 
   const handleVolumeChange = (id: string, volume: number) => {
-    setVolumes(prev => ({
-      ...prev,
-      [id]: volume
-    }));
+    setVolumes(prev => {
+      trackAudioEvent(id, 'volume_change');
+      return { ...prev, [id]: volume };
+    });
   };
 
   const handleTimerSet = (minutes: number) => {
+    trackTimerEvent(minutes);
     if (minutes === 0) {
-      // 立即停止所有声音
       setActiveSounds({});
     } else {
-      // 设置定时器在指定时间后停止所有声音
       setTimeout(() => {
         setActiveSounds({});
       }, minutes * 60 * 1000);
@@ -77,6 +78,7 @@ export default function Home() {
   };
 
   const applyPreset = (preset: string) => {
+    trackPresetEvent(preset);
     const scene = scenePresets[preset as keyof typeof scenePresets];
     if (!scene) return;
 

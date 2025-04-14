@@ -224,10 +224,18 @@ ffmpeg -i input.mp3 -b:a 128k output.mp3
 - [x] 更新网站名称为 Cloud White Noise
 - [x] 优化图标显示效果
 
+### 2024-03-25
+- [x] 集成 Google Analytics
+- [x] 添加音频事件追踪
+- [x] 添加场景预设事件追踪
+- [x] 添加定时器事件追踪
+- [x] 配置域名 cloudwhitenoise.space
+- [x] 配置 Cloudflare CDN
+- [x] 优化 DNS 设置
+
 ### MVP 待完成功能
 - [ ] 添加音频预加载机制
 - [ ] 添加用户使用引导
-- [ ] 优化SEO配置
 - [ ] 添加基础数据分析
 - [ ] 实现音效组合保存功能（可选）
 - [ ] 添加音频可视化效果（可选）

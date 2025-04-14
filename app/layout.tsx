@@ -3,6 +3,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { useState } from 'react';
+import Analytics from './components/Analytics';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} ${isDarkMode ? 'dark' : 'light'}`}>
+        <Analytics />
         <nav className="fixed top-0 left-0 right-0 z-50 bg-opacity-80 backdrop-blur-md">
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex justify-between items-center h-16">
