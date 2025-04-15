@@ -25,32 +25,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cloud White Noise',
+    title: 'Cloud White Noise - Ambient Sounds for Focus & Relaxation',
     description: 'Free online white noise player for better focus, relaxation and sleep.',
     images: ['/twitter-image.png']
   },
-  structuredData: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Cloud White Noise",
-    "description": "Free online white noise player featuring natural, urban, and meditation sounds to help you focus, relax, and sleep better.",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "featureList": [
-      "Natural Sounds",
-      "White Noise",
-      "Meditation Music",
-      "Sound Mixer",
-      "Timer",
-      "Scene Presets"
-    ]
-  },
-  verification: {
-    google: 'your-google-site-verification-code', // 这里需要替换成你的验证码
+  other: {
+    'application-name': 'Cloud White Noise',
+    'google-site-verification': process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || ''
   }
 }; 
