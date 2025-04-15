@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/private/', '/admin/'],
     },
-    sitemap: 'https://cloudwhitenoise.vercel.app/sitemap.xml',
+    sitemap: 'https://cloudwhitenoise.space/sitemap.xml',
   };
 } 

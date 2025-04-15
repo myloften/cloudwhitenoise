@@ -1,25 +1,25 @@
 import { MetadataRoute } from 'next';
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://cloudwhitenoise.space';
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://cloudwhitenoise.vercel.app';
-  
   return [
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'daily',
+      changeFrequency: 'yearly',
       priority: 1,
     },
     {
       url: `${baseUrl}/about`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/contact`,
+      url: `${baseUrl}/blog`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 0.5,
     },
   ];
