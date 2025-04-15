@@ -41,9 +41,9 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center">
-                <a href="/" className="text-2xl font-bold text-[var(--mint)]">
+                <Link href="/" className="text-2xl font-bold text-[var(--mint)]">
                   Cloud White Noise
-                </a>
+                </Link>
               </div>
 
               <div className="flex items-center space-x-4">
