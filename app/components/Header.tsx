@@ -40,7 +40,7 @@ export default function Header({
               About
             </Link>
             <button
-              onClick={() => setIsDarkMode(!isDarkMode)}
+              onClick={onThemeToggle}
               className="p-2 rounded-full hover:bg-white/10 transition-colors text-[#66B2B2] hover:text-[#7CC9C9]"
             >
               {isDarkMode ? '🌞' : '🌜'}
