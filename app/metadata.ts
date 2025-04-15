@@ -1,36 +1,54 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://cloudwhitenoise.space'),
   title: 'Cloud White Noise - Ambient Sounds for Focus & Relaxation',
   description: 'Free online white noise player featuring natural, urban, and meditation sounds to help you focus, relax, and sleep better.',
-  keywords: 'white noise, ambient sounds, focus, relaxation, sleep aid, productivity, meditation sounds',
+  keywords: 'white noise, ambient sounds, relaxation, meditation, sleep sounds, focus music, nature sounds, urban sounds, background noise, sleep aid',
   authors: [{ name: 'Cloud White Noise Team' }],
-  creator: 'Cloud White Noise Team',
+  creator: 'Cloud White Noise',
   publisher: 'Cloud White Noise',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     title: 'Cloud White Noise - Ambient Sounds for Focus & Relaxation',
-    description: 'Free online white noise player for better focus, relaxation and sleep.',
+    description: 'Free online white noise player featuring natural, urban, and meditation sounds to help you focus, relax, and sleep better.',
+    type: 'website',
+    locale: 'en_US',
     url: 'https://cloudwhitenoise.space',
     siteName: 'Cloud White Noise',
-    type: 'website',
     images: [
       {
-        url: '/og-image.png',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Cloud White Noise - Ambient Sounds for Focus & Relaxation'
-      }
-    ]
+        alt: 'Cloud White Noise - Your Personal Ambient Sound Player',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Cloud White Noise - Ambient Sounds for Focus & Relaxation',
-    description: 'Free online white noise player for better focus, relaxation and sleep.',
-    images: ['/twitter-image.png']
+    description: 'Free online white noise player featuring natural, urban, and meditation sounds to help you focus, relax, and sleep better.',
+    images: ['/og-image.jpg'],
+    creator: '@cloudwhitenoise',
   },
-  other: {
-    'application-name': 'Cloud White Noise',
-    'google-site-verification': process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || ''
-  }
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  viewport: 'width=device-width, initial-scale=1',
+  themeColor: '#1a1a1a',
+  alternates: {
+    canonical: 'https://cloudwhitenoise.space',
+  },
 }; 
